@@ -19,8 +19,13 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 	$hashedPassword = md5($_POST['password']);
 
 	//version de base
-	$sql = "select * from users where login = '$login' and password = '$hashedPassword'";
-	$query = $database->query($sql, PDO::FETCH_ASSOC);
+	// $sql = "select * from users where login = '$login' and password = '$hashedPassword'";
+	// $query = $database->query($sql, PDO::FETCH_ASSOC);
+
+	// $query = $db->prepare("select * from users where login = '$login' and password = '$hashedPassword'")
+
+	// $query->execute([$sql]);
+
 
 	$users = $query->fetchAll();
 
